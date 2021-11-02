@@ -1,2 +1,2 @@
-# electron-lessons
-A sample Electron (JS) project for Medium lessons.
+# Virtual world layout editor
+Engineering thesis project
