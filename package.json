@@ -1,0 +1,41 @@
+{
+	"name": "electron-lessons",
+	"version": "1.0.0",
+	"description": "A sample Electron (JS) project for Medium lessons.",
+	"main": "app/index.js",
+	"scripts": {
+		"start": "node app/start.mjs",
+		"electron": "electron ."
+	},
+	"targets": {
+		"main": false
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/course-one/electron-lessons.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/course-one/electron-lessons/issues"
+	},
+	"homepage": "https://github.com/course-one/electron-lessons#readme",
+	"devDependencies": {
+		"@parcel/config-default": "^2.0.0",
+		"@parcel/core": "^2.0.0",
+		"@parcel/transformer-sass": "^2.0.0",
+		"electron": "^11.1.1",
+		"electron-reloader": "^1.2.1",
+		"sass": "^1.43.4"
+	},
+	"dependencies": {
+		"chokidar": "^3.4.3",
+		"drag-drop": "^6.1.0",
+		"evergreen-ui": "^6.5.2",
+		"fs-extra": "^9.0.1",
+		"open": "^7.3.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2"
+	}
+}

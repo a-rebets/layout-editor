@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="Content-Security-Policy" content="script-src 'self';" />
+		<title>World Layout Editor</title>
+
+		<!-- import fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- import styles -->
+		<link rel="stylesheet" href="../scss/styles.scss" />
+	</head>
+
+	<body>
+		<!-- <div id="uploader" class="app__uploader">
+			<div class="app__uploader__icon-area">
+				<img
+					src="../assets/upload.svg"
+					class="app__uploader__icon-area__icon"
+				/>
+				<p class="app__uploader__icon-area__text">Drag file(s) to add</p>
+			</div>
+			<div class="app__uploader__button-area">
+				<button
+					class="app__uploader__button-area__button"
+					onclick="openDialog()"
+				>
+					Click To Add Files
+				</button>
+			</div>
+		</div>
+
+		<div id="filelist" class="app__files"></div> -->
+		<div id="app"></div>
+
+		<!-- require render JavaScript -->
+		<script type="module" src="../js/root.js"></script>
+	</body>
+</html>
