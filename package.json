@@ -1,10 +1,10 @@
 {
-	"name": "electron-lessons",
+	"name": "layout-editor",
 	"version": "1.0.0",
-	"description": "A sample Electron (JS) project for Medium lessons.",
+	"description": "An Electron app made for the university thesis project",
 	"main": "app/index.js",
 	"scripts": {
-		"start": "node app/start.mjs",
+		"start": "node scripts/start.mjs",
 		"electron": "electron ."
 	},
 	"targets": {
@@ -12,30 +12,39 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/course-one/electron-lessons.git"
+		"url": "git+https://github.com/apopelyshev/layout-editor.git"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/course-one/electron-lessons/issues"
+		"url": "https://github.com/apopelyshev/layout-editor/issues"
 	},
-	"homepage": "https://github.com/course-one/electron-lessons#readme",
+	"homepage": "https://popelyshev.hashnode.dev",
 	"devDependencies": {
 		"@parcel/config-default": "^2.0.0",
 		"@parcel/core": "^2.0.0",
 		"@parcel/transformer-sass": "^2.0.0",
-		"electron": "^11.1.1",
-		"electron-reloader": "^1.2.1",
+		"@types/react": "^17.0.34",
+		"eslint": "7.32.0",
+		"eslint-config-airbnb-base": "^14.2.1",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-prettier": "^4.0.0",
+		"eslint-plugin-react": "^7.26.1",
+		"eslint-plugin-react-hooks": "^4.2.0",
+		"prettier": "^2.4.1",
 		"sass": "^1.43.4"
 	},
 	"dependencies": {
-		"chokidar": "^3.4.3",
-		"drag-drop": "^6.1.0",
+		"deepmerge": "^4.2.2",
+		"electron": "16.0.0-beta.7",
+		"electron-reloader": "^1.2.1",
 		"evergreen-ui": "^6.5.2",
-		"fs-extra": "^9.0.1",
-		"open": "^7.3.0",
+		"fuse.js": "^6.4.6",
+		"moment": "^2.29.1",
 		"react": "^17.0.2",
-		"react-dom": "^17.0.2"
+		"react-dom": "^17.0.2",
+		"react-flip-move": "^3.0.4"
 	}
 }
