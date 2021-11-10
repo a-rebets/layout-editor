@@ -30,7 +30,7 @@ const ContentPane = () => {
 						paddingY={16}
 						{...tab.style}
 					>
-						<tab.pane />
+						<tab.content />
 					</Pane>
 				))}
 			</Pane>

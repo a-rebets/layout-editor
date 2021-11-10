@@ -1,4 +1,4 @@
-import { Pane, Text } from 'evergreen-ui'
+import { EmptyState, Pane, SearchIcon } from 'evergreen-ui'
 import { useContext } from 'react'
 import FlipMove from 'react-flip-move'
 import { LayoutsContext } from '../context'
@@ -9,9 +9,9 @@ const LayoutList = () => {
 
 	return (
 		<Pane is="section" overflow="auto">
-			<FlipMove staggerDurationBy="30" leaveAnimation={null}>
-				{layouts.filtered.length ? (
-					layouts.filtered.map((el) => (
+			{layouts.filtered.length ? (
+				<FlipMove staggerDurationBy="30" leaveAnimation={null}>
+					{layouts.filtered.map((el) => (
 						<LayoutListItem
 							key={el.uid}
 							layout={el}
@@ -22,11 +22,18 @@ const LayoutList = () => {
 							paddingX={16}
 							display="flex"
 						/>
-					))
-				) : (
-					<Text>No results</Text>
-				)}
-			</FlipMove>
+					))}
+				</FlipMove>
+			) : (
+				<EmptyState
+					background="light"
+					title="No layouts matched your query"
+					orientation="horizontal"
+					icon={<SearchIcon color="#C1C4D6" />}
+					iconBgColor="#EDEFF5"
+					description="Try typing something different"
+				/>
+			)}
 		</Pane>
 	)
 }

@@ -1,3 +1,5 @@
+$steps-color: #039be5;
+
 * {
 	box-sizing: border-box;
 }
@@ -28,116 +30,53 @@ main > * {
 	height: 100%;
 }
 
-/* .app {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
+.content {
+	.rc-steps-navigation .rc-steps-item {
+		.rc-steps-item-container {
+			padding-bottom: 16px;
+			padding-right: 8px;
+			border-bottom-color: $steps-color;
 
-    &__uploader {
-        flex: 0 0 auto;
-        width: 50vw;
-        display: flex;
-        flex-direction: column;
+			.rc-steps-item-content {
+				margin-top: 0;
+			}
 
-        &--activate {
-            opacity: 0.5;
-        }
+			.rc-steps-item-icon {
+				margin-right: 16px;
 
-        &__icon-area {
-            flex: 1 1 auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+				> .rc-steps-icon {
+					color: $steps-color;
+				}
+			}
+		}
 
-            &__icon {
-                flex: 0 0 auto;
-                width: 90px;
-            }
+		&.rc-steps-item-wait .rc-steps-item-icon {
+			border-color: #ccc;
+			background-color: #fff;
 
-            &__text {
-                font-size: 14px;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-                font-weight: bold;
-            }
-        }
+			> .rc-steps-icon {
+				color: #ccc;
+			}
+		}
 
-        &__button-area {
-            flex: 0 0 auto;
-            text-align: center;
-            padding: 30px;
+		&.rc-steps-item-process .rc-steps-item-icon {
+			background: $steps-color;
 
-            &__button {
-                border: none;
-                outline: none;
-                padding: 6px 12px;
-                font-size: 12px;
-                text-transform: uppercase;
-                background-color: #d056e6;
-                color: #fff;
-                border-radius: 3px;
-                overflow: hidden;
-                cursor: pointer;
-            }
-        }
-    }
+			> .rc-steps-icon {
+				color: #fff;
+			}
+		}
 
-    &__files {
-        flex: 0 0 auto;
-        width: 50vw;
-        background-color: #ddd;
-        padding: 20px;
-        overflow-x: hidden;
-        overflow-y: auto;
+		&.rc-steps-item-finish .rc-steps-item-icon {
+			border-color: $steps-color;
 
-        &__item {
-            display: flex;
-            align-items: center;
-            overflow: hidden;
+			> .rc-steps-icon {
+				top: unset;
 
-            &__file {
-                flex: 0 0 auto;
-                width: 20px;
-            }
-
-            &__info {
-                flex: 1 1 auto;
-                margin: 0 20px;
-                overflow: hidden;
-
-                &__name {
-                    font-size: 14px;
-                    overflow: hidden;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    margin: 0;
-                }
-
-                &__size {
-                    font-size: 12px;
-                    color: #666;
-                    margin: 0;
-                }
-            }
-
-            &__delete {
-                flex: 0 0 auto;
-                width: 16px;
-                cursor: pointer;
-            }
-
-            &__open {
-                flex: 0 0 auto;
-                width: 16px;
-                margin-left: 10px;
-                cursor: pointer;
-            }
-
-            &:not(:last-child) {
-                margin-bottom: 20px;
-            }
-        }
-    }
+				> svg {
+					height: 100%;
+				}
+			}
+		}
+	}
 }
- */

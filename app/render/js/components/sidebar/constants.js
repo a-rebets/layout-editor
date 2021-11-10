@@ -7,7 +7,7 @@ export const sidebarTabs = [
 		key: 'saved_or_import',
 		icon: FolderOpenIcon,
 		section: 0,
-		pane: ViewImportPane,
+		content: ViewImportPane,
 		style: {
 			gridTemplateRows: `minmax(${majorScale(
 				5
@@ -20,7 +20,7 @@ export const sidebarTabs = [
 		key: 'create_new',
 		icon: AddIcon,
 		section: 0,
-		pane: CreateNewPane,
+		content: CreateNewPane,
 		style: {},
 	},
 	{
@@ -28,7 +28,7 @@ export const sidebarTabs = [
 		key: 'settings',
 		icon: SettingsIcon,
 		section: 1,
-		pane: SettingsPane,
+		content: SettingsPane,
 		style: {},
 	},
 ]
