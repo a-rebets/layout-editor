@@ -4,7 +4,7 @@ import FlipMove from 'react-flip-move'
 import { LayoutsContext } from '../context'
 import LayoutListItem from './list_item'
 
-const LayoutList = () => {
+function LayoutList() {
 	const { layouts } = useContext(LayoutsContext)
 
 	return (

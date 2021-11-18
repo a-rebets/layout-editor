@@ -1,5 +1,3 @@
-const GeneralStep = () => {
-	return <></>
-}
+function GeneralStep() {}
 
 export default GeneralStep

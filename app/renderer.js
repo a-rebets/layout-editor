@@ -1,10 +1,8 @@
-const dragDrop = require('drag-drop')
+/* const dragDrop = require('drag-drop')
 const { ipcRenderer } = require('electron')
 
 // local dependencies
 const dom = require('./dom')
-
-/*****************************/
 
 // get list of files from the `main` process
 ipcRenderer.invoke('app:get-files').then((files = []) => {
@@ -15,8 +13,6 @@ ipcRenderer.invoke('app:get-files').then((files = []) => {
 ipcRenderer.on('app:delete-file', (event, filename) => {
 	document.getElementById(filename).remove()
 })
-
-/*****************************/
 
 // add files drop listener
 dragDrop('#uploader', (files) => {
@@ -43,3 +39,4 @@ window.openDialog = () => {
 		})
 	})
 }
+ */

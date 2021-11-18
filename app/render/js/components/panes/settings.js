@@ -1,5 +1,3 @@
-const SettingsPane = () => {
-	return <></>
-}
+function SettingsPane() {}
 
 export default SettingsPane

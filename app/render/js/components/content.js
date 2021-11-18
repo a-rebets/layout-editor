@@ -2,7 +2,7 @@ import { Pane } from 'evergreen-ui'
 import { useState, useCallback } from 'react'
 import { Sidebar, sidebarTabs } from './sidebar'
 
-const ContentPane = () => {
+function ContentPane() {
 	const [selectedIndex, setSelectedIndex] = useState(0)
 
 	const handleSelect = useCallback((i) => {

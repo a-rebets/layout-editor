@@ -1,10 +1,11 @@
 {
 	"compilerOptions": {
-		"baseUrl": ".",
-		"checkJs": false,
-		"module": "commonjs",
-		"target": "es6"
+		"baseUrl": "./",
+		"module": "ES2020",
+		"target": "ES2020",
+		"checkJs": true,
+		"allowJs": true,
+		"moduleResolution": "node"
 	},
-	"include": ["app/**/*.js"],
-	"exclude": ["app/render"]
+	"exclude": ["node_modules", "release/build", "release/app/dist"]
 }

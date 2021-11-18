@@ -1,0 +1,11 @@
+{
+	"typescript.validate.enable": false,
+	"javascript.suggestionActions.enabled": false,
+	"search.exclude": {
+		".git": true,
+		".eslintcache": true,
+		"release/{build,app/dist}": true,
+		"node_modules": true,
+		"package-lock.json": true
+	}
+}

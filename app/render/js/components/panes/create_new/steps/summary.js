@@ -1,5 +1,3 @@
-const SummaryStep = () => {
-	return <></>
-}
+function SummaryStep() {}
 
 export default SummaryStep

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { Heading, majorScale, Pane, ThemeProvider, Text } from 'evergreen-ui'
 import Logo from '~app/render/assets/logo.png'
 import ContentPane from './content'
@@ -26,7 +27,7 @@ const headerStyles = {
 	borderBottom: true,
 }
 
-const App = () => {
+function App() {
 	return (
 		<Pane {...appBoxStyles}>
 			<ThemeProvider value={customTheme}>

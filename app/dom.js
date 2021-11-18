@@ -1,4 +1,4 @@
-const { ipcRenderer } = require('electron')
+/* const { ipcRenderer } = require('electron')
 
 // copy file
 window.copyFile = function (event, itemId) {
@@ -38,9 +38,9 @@ exports.displayFiles = (files = []) => {
 
 	files.forEach((file) => {
 		const itemDomElem = document.createElement('div')
-		itemDomElem.setAttribute('id', file.name) // set `id` attribute
-		itemDomElem.setAttribute('class', 'app__files__item') // set `class` attribute
-		itemDomElem.setAttribute('data-filepath', file.path) // set `data-filepath` attribute
+		itemDomElem.setAttribute('id', file.name)
+		itemDomElem.setAttribute('class', 'app__files__item')
+		itemDomElem.setAttribute('data-filepath', file.path)
 
 		itemDomElem.innerHTML = `
             <img ondragstart='copyFile(event, "${file.name}")' src='../assets/document.svg' class='app__files__item__file'/>
@@ -55,3 +55,4 @@ exports.displayFiles = (files = []) => {
 		fileListElem.appendChild(itemDomElem)
 	})
 }
+ */

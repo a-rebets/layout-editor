@@ -1,8 +1,9 @@
+/* eslint-disable react/no-array-index-key */
 import { Heading, majorScale, Pane, Tab, Tablist } from 'evergreen-ui'
 import { memo } from 'react'
 import { sidebarSectionNames } from './constants'
 
-const Sidebar = ({ tabs, selectedInd, handleSelect }) => {
+function Sidebar({ tabs, selectedInd, handleSelect }) {
 	return (
 		<Pane
 			paddingLeft={40}

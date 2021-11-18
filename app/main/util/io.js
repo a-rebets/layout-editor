@@ -1,15 +1,18 @@
-const { ipcMain } = require('electron')
-const path = require('path')
-const fs = require('fs-extra')
-const os = require('os')
-const open = require('open')
 const chokidar = require('chokidar')
+const os = require('os')
+const path = require('path')
+
+// get application directory
+const appDir = path.resolve(os.homedir(), 'layout-editor-cache')
+
+/* const { ipcMain } = require('electron')
+const fs = require('fs-extra')
+const open = require('open')
 
 // local dependencies
 const notification = require('./notification')
 
-// get application directory
-const appDir = path.resolve(os.homedir(), 'layout-editor-cache')
+
 
 // get the list of files
 exports.getFiles = () => {
@@ -63,9 +66,7 @@ exports.openFile = (filename) => {
 	if (fs.existsSync(filePath)) {
 		open(filePath)
 	}
-}
-
-/*-----*/
+} */
 
 // watch files from the application's storage directory
 exports.watchFiles = (win) => {

@@ -1,5 +1,5 @@
 import { Button, ImportIcon, majorScale, Pane } from 'evergreen-ui'
-import { useEffect, useReducer } from 'react'
+import { useEffect, useMemo, useReducer } from 'react'
 import LayoutList from './layout_list/list'
 import LayoutSearchField from './layout_list/search_field'
 import PageControl from './layout_list/pagination'
@@ -65,15 +65,17 @@ const listSectionStyle = {
 	gap: '0 0',
 }
 
-const ViewImportPane = () => {
+function ViewImportPane() {
 	const [layouts, setLayouts] = useReducer(reducer, initPaneState)
+
+	const contextObj = useMemo(() => ({ layouts, setLayouts }), [layouts])
 
 	useEffect(() => {
 		setLayouts({ type: 'init', val: loadedLayouts })
 	}, [])
 
 	return (
-		<LayoutsContext.Provider value={{ layouts, setLayouts }}>
+		<LayoutsContext.Provider value={contextObj}>
 			<Pane width="100%" display="flex" is="section">
 				<Pane flexGrow={1} paddingRight={16}>
 					<LayoutSearchField />

@@ -1,22 +1,93 @@
 {
 	"name": "layout-editor",
+	"productName": "WorldLayoutEditor",
 	"version": "1.0.0",
 	"description": "An Electron app made for the university thesis project",
 	"main": "app/index.js",
+	"type": "module",
 	"scripts": {
-		"start": "node scripts/start.mjs",
+		"start": "node scripts/start.js",
 		"electron": "electron ."
 	},
 	"targets": {
 		"main": false
+	},
+	"build": {
+		"productName": "ElectronReact",
+		"appId": "org.erb.ElectronReact",
+		"asar": true,
+		"asarUnpack": "**\\*.{node,dll}",
+		"files": [
+			"dist",
+			"node_modules",
+			"package.json"
+		],
+		"afterSign": ".erb/scripts/notarize.js",
+		"mac": {
+			"target": {
+				"target": "default",
+				"arch": [
+					"arm64",
+					"x64"
+				]
+			},
+			"type": "distribution",
+			"hardenedRuntime": true,
+			"entitlements": "assets/entitlements.mac.plist",
+			"entitlementsInherit": "assets/entitlements.mac.plist",
+			"gatekeeperAssess": false
+		},
+		"dmg": {
+			"contents": [
+				{
+					"x": 130,
+					"y": 220
+				},
+				{
+					"x": 410,
+					"y": 220,
+					"type": "link",
+					"path": "/Applications"
+				}
+			]
+		},
+		"win": {
+			"target": [
+				"nsis"
+			]
+		},
+		"linux": {
+			"target": [
+				"AppImage"
+			],
+			"category": "Development"
+		},
+		"directories": {
+			"app": "release/app",
+			"buildResources": "assets",
+			"output": "release/build"
+		},
+		"extraResources": [
+			"./assets/**"
+		],
+		"publish": {
+			"provider": "github",
+			"owner": "electron-react-boilerplate",
+			"repo": "electron-react-boilerplate"
+		}
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/apopelyshev/layout-editor.git"
 	},
 	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"browserslist": [],
+	"author": {
+		"name": "Artem Popelyshev",
+		"email": "apopelyshev@gmail.com",
+		"url": "https://popelyshev.hashnode.dev"
+	},
+	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/apopelyshev/layout-editor/issues"
 	},
@@ -25,21 +96,30 @@
 		"@parcel/config-default": "^2.0.0",
 		"@parcel/core": "^2.0.0",
 		"@parcel/transformer-sass": "^2.0.0",
+		"@types/node": "^16.11.7",
 		"@types/react": "^17.0.34",
+		"@types/react-dom": "^17.0.11",
+		"electron": "^16.0.0",
+		"electron-builder": "^22.13.1",
+		"electron-devtools-installer": "^3.2.0",
+		"electron-reloader": "^1.2.1",
 		"eslint": "7.32.0",
-		"eslint-config-airbnb-base": "^14.2.1",
+		"eslint-config-airbnb": "^19.0.0",
+		"eslint-config-airbnb-base": "^15.0.0",
 		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-import": "^2.25.3",
+		"eslint-plugin-jsx-a11y": "^6.5.1",
 		"eslint-plugin-prettier": "^4.0.0",
-		"eslint-plugin-react": "^7.26.1",
-		"eslint-plugin-react-hooks": "^4.2.0",
+		"eslint-plugin-react": "^7.27.0",
+		"eslint-plugin-react-hooks": "^4.3.0",
 		"prettier": "^2.4.1",
-		"sass": "^1.43.4"
+		"sass": "^1.43.4",
+		"stylelint": "^14.0.1",
+		"stylelint-config-standard-scss": "^2.0.1"
 	},
 	"dependencies": {
+		"chokidar": "^3.5.2",
 		"deepmerge": "^4.2.2",
-		"electron": "16.0.0-beta.7",
-		"electron-reloader": "^1.2.1",
 		"evergreen-ui": "^6.5.2",
 		"fuse.js": "^6.4.6",
 		"moment": "^2.29.1",

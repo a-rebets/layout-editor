@@ -2,7 +2,7 @@ import { SearchInput } from 'evergreen-ui'
 import { useContext } from 'react'
 import { LayoutsContext } from '../context'
 
-const LayoutSearchField = () => {
+function LayoutSearchField() {
 	const { setLayouts } = useContext(LayoutsContext)
 
 	const handleChange = (e) => {

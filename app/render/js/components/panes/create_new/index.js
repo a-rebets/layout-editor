@@ -11,7 +11,7 @@ const tabs = [
 	{ key: 'summaary', step: SummaryStep },
 ]
 
-const CreateNewPane = () => {
+function CreateNewPane() {
 	const theme = useTheme()
 	const [currentStep, setCurrentStep] = useState(0)
 

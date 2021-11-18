@@ -1,5 +1,3 @@
-const BaseChoiceStep = () => {
-	return <></>
-}
+function BaseChoiceStep() {}
 
 export default BaseChoiceStep

@@ -1,0 +1,68 @@
+{
+	"root": true,
+	"env": {
+		"es2020": true,
+		"node": true
+	},
+	"ignorePatterns": ["release/app/dist", "release/build"],
+	"extends": [
+		"eslint:recommended",
+		"airbnb-base",
+		"plugin:prettier/recommended"
+	],
+	"rules": {
+		"import/no-extraneous-dependencies": "off"
+	},
+	"parserOptions": {
+		"ecmaVersion": 11
+	},
+	"overrides": [
+		{
+			"files": ["app/main/**/*.js"],
+			"env": {
+				"commonjs": true
+			},
+			"parserOptions": {
+				"sourceType": "script"
+			}
+		},
+		{
+			"files": ["app/render/**/*.js"],
+			"env": {
+				"browser": true,
+				"node": false
+			},
+			"extends": [
+				"eslint:recommended",
+				"airbnb",
+				"airbnb/hooks",
+				"plugin:react/jsx-runtime",
+				"plugin:prettier/recommended"
+			],
+			"rules": {
+				"react/prop-types": "off",
+				"react/jsx-filename-extension": [
+					1,
+					{ "extensions": [".js", ".jsx"] }
+				],
+				"react/function-component-definition": [
+					2,
+					{
+						"namedComponents": "function-declaration",
+						"unnamedComponents": "arrow-function"
+					}
+				],
+				"react/jsx-props-no-spreading": [
+					2,
+					{
+						"custom": "ignore"
+					}
+				],
+				"import/no-unresolved": [
+					2,
+					{ "ignore": [".png$", ".svg$", ".jpg$"] }
+				]
+			}
+		}
+	]
+}

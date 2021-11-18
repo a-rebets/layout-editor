@@ -1,6 +1,6 @@
 import { Button, ChevronLeftIcon, ChevronRightIcon, Pane } from 'evergreen-ui'
 
-const PageControl = () => {
+function PageControl() {
 	return (
 		<Pane display="flex" justifyContent="flex-end">
 			<Button marginRight={8} iconBefore={ChevronLeftIcon}>

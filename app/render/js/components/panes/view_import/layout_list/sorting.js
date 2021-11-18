@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import {
 	Button,
 	CalendarIcon,
@@ -19,7 +20,7 @@ const menuOptions = [
 	{ title: 'Creation date', icon: CalendarIcon, value: 'by_date' },
 ]
 
-const SortingToolbar = () => {
+function SortingToolbar() {
 	const [optionSelected, setOptionSelected] = useState(-1)
 
 	const { setLayouts } = useContext(LayoutsContext)
@@ -50,7 +51,7 @@ const SortingToolbar = () => {
 							return (
 								<Menu.Item
 									id={ind}
-									key={ind}
+									key={`item-${ind}`}
 									height={32}
 									icon={o.icon}
 									aria-checked={isCurrent}
