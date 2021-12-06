@@ -109,3 +109,5 @@ dist
 .DS_Store
 
 .parcel-cache
+release/app/dist
+release/build

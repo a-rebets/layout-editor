@@ -1,20 +1,14 @@
 {
 	"name": "layout-editor",
-	"productName": "WorldLayoutEditor",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"description": "An Electron app made for the university thesis project",
-	"main": "app/index.js",
-	"type": "module",
 	"scripts": {
-		"start": "node scripts/start.js",
-		"electron": "electron ."
-	},
-	"targets": {
-		"main": false
+		"start": "node ./scripts/check_port.mjs && node ./scripts/renderer.mjs",
+		"start:main": "cross-env NODE_ENV=development electron ./app/main/index.js"
 	},
 	"build": {
-		"productName": "ElectronReact",
-		"appId": "org.erb.ElectronReact",
+		"productName": "WorldLayoutEditor",
+		"appId": "org.apopelyshev.WorldEditor",
 		"asar": true,
 		"asarUnpack": "**\\*.{node,dll}",
 		"files": [
@@ -22,7 +16,6 @@
 			"node_modules",
 			"package.json"
 		],
-		"afterSign": ".erb/scripts/notarize.js",
 		"mac": {
 			"target": {
 				"target": "default",
@@ -56,15 +49,9 @@
 				"nsis"
 			]
 		},
-		"linux": {
-			"target": [
-				"AppImage"
-			],
-			"category": "Development"
-		},
 		"directories": {
 			"app": "release/app",
-			"buildResources": "assets",
+			"buildResources": "build_assets",
 			"output": "release/build"
 		},
 		"extraResources": [
@@ -72,8 +59,8 @@
 		],
 		"publish": {
 			"provider": "github",
-			"owner": "electron-react-boilerplate",
-			"repo": "electron-react-boilerplate"
+			"owner": "apopelyshev",
+			"repo": "layout-editor"
 		}
 	},
 	"repository": {
@@ -85,7 +72,7 @@
 	"author": {
 		"name": "Artem Popelyshev",
 		"email": "apopelyshev@gmail.com",
-		"url": "https://popelyshev.hashnode.dev"
+		"url": "https://github.com/apopelyshev"
 	},
 	"license": "MIT",
 	"bugs": {
@@ -93,12 +80,15 @@
 	},
 	"homepage": "https://popelyshev.hashnode.dev",
 	"devDependencies": {
-		"@parcel/config-default": "^2.0.0",
-		"@parcel/core": "^2.0.0",
-		"@parcel/transformer-sass": "^2.0.0",
+		"@parcel/config-default": "latest",
+		"@parcel/core": "latest",
+		"@parcel/transformer-sass": "latest",
 		"@types/node": "^16.11.7",
 		"@types/react": "^17.0.34",
 		"@types/react-dom": "^17.0.11",
+		"chalk": "^4.1.2",
+		"cross-env": "^7.0.3",
+		"detect-port": "^1.3.0",
 		"electron": "^16.0.0",
 		"electron-builder": "^22.13.1",
 		"electron-devtools-installer": "^3.2.0",
@@ -115,7 +105,8 @@
 		"prettier": "^2.4.1",
 		"sass": "^1.43.4",
 		"stylelint": "^14.0.1",
-		"stylelint-config-standard-scss": "^2.0.1"
+		"stylelint-config-standard-scss": "^2.0.1",
+		"typescript": "^4.6.0-dev.20211202"
 	},
 	"dependencies": {
 		"chokidar": "^3.5.2",

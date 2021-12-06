@@ -1,5 +1,9 @@
 import { AddIcon, FolderOpenIcon, majorScale, SettingsIcon } from 'evergreen-ui'
-import { CreateNewPane, SettingsPane, ViewImportPane } from '../panes'
+import { lazy } from 'react'
+
+const SettingsPane = lazy(() => import('../panes/settings'))
+const CreateNewPane = lazy(() => import('../panes/create_new'))
+const ViewImportPane = lazy(() => import('../panes/view_import'))
 
 export const sidebarTabs = [
 	{

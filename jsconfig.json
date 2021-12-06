@@ -1,11 +1,10 @@
 {
 	"compilerOptions": {
-		"baseUrl": "./",
-		"module": "ES2020",
+		"baseUrl": "./app",
+		"module": "nodenext",
 		"target": "ES2020",
 		"checkJs": true,
-		"allowJs": true,
-		"moduleResolution": "node"
+		"allowSyntheticDefaultImports": true
 	},
-	"exclude": ["node_modules", "release/build", "release/app/dist"]
+	"exclude": ["node_modules", "release/app/dist", "release/build"]
 }

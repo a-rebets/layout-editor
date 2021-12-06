@@ -29,6 +29,7 @@ function Sidebar({ tabs, selectedInd, handleSelect }) {
 									appearance="custom"
 									direction="vertical"
 									key={tab.key}
+									id={tab.key}
 									onSelect={() => handleSelect(tabInd)}
 									isSelected={tabInd === selectedInd}
 									aria-controls={`panel-${tab.key}`}

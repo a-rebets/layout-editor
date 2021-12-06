@@ -1,3 +1,5 @@
-function SummaryStep() {}
+function SummaryStep() {
+	return <></>
+}
 
 export default SummaryStep

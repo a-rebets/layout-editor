@@ -4,7 +4,12 @@
 		"es2020": true,
 		"node": true
 	},
-	"ignorePatterns": ["release/app/dist", "release/build"],
+	"ignorePatterns": [
+		"release/app/dist",
+		"release/build",
+		"node_modules",
+		".DS_Store"
+	],
 	"extends": [
 		"eslint:recommended",
 		"airbnb-base",
@@ -15,6 +20,11 @@
 	},
 	"parserOptions": {
 		"ecmaVersion": 11
+	},
+	"settings": {
+		"import/resolver": {
+			"node": {}
+		}
 	},
 	"overrides": [
 		{
@@ -27,7 +37,7 @@
 			}
 		},
 		{
-			"files": ["app/render/**/*.js"],
+			"files": ["app/render/js/**/*.js"],
 			"env": {
 				"browser": true,
 				"node": false
@@ -39,6 +49,9 @@
 				"plugin:react/jsx-runtime",
 				"plugin:prettier/recommended"
 			],
+			"parserOptions": {
+				"ecmaVersion": 11
+			},
 			"rules": {
 				"react/prop-types": "off",
 				"react/jsx-filename-extension": [

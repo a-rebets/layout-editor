@@ -1,6 +1,7 @@
 {
 	"typescript.validate.enable": false,
 	"javascript.suggestionActions.enabled": false,
+	"typescript.tsdk": "./node_modules/typescript/lib",
 	"search.exclude": {
 		".git": true,
 		".eslintcache": true,

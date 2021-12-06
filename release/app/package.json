@@ -1,0 +1,13 @@
+{
+	"name": "layout-editor",
+	"version": "0.0.1",
+	"description": "Virtual world layout editor, made using Electron, with the data provided by Openstreetmaps",
+	"main": "./dist/main/index.js",
+	"author": {
+		"name": "Artem Popelyshev",
+		"email": "apopelyshev@gmail.com",
+		"url": "https://github.com/apopelyshev"
+	},
+	"scripts": {},
+	"license": "MIT"
+}

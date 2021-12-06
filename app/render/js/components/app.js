@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import { Heading, majorScale, Pane, ThemeProvider, Text } from 'evergreen-ui'
-import Logo from '~app/render/assets/logo.png'
+import Logo from '../../assets/logo.png'
 import ContentPane from './content'
 import customTheme from './util/theme'
 

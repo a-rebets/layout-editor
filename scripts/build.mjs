@@ -1,7 +1,7 @@
 import Parcel from '@parcel/core'
 import { ESLint } from 'eslint'
-import path from 'path'
 import stylelint from 'stylelint'
+import { URL } from 'url'
 
 /* eslint-disable no-console */
 const bundler = new Parcel({
@@ -20,7 +20,7 @@ const lintJS = async (pattern) => {
 	let result = false
 	try {
 		const mainLinter = new ESLint({
-			cwd: path.resolve(__dirname, 'layout-editor-cache'),
+			cwd: new URL(import.meta.url, 'layout-editor-cache').pathname,
 		})
 		const formatter = await mainLinter.loadFormatter('stylish')
 		mainLinter.lintFiles(pattern).then((data) => {

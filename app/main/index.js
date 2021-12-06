@@ -6,6 +6,8 @@ const {
 	default: installExtension,
 	REACT_DEVELOPER_TOOLS,
 } = require('electron-devtools-installer')
+
+const resolveHtmlPath = require('./util/windowMethods')
 const io = require('./util/io')
 
 let mainWindow
@@ -16,17 +18,36 @@ try {
 	console.log('A problem occured while reloading Electron!')
 }
 
+const RESOURCES_PATH = app.isPackaged
+	? path.join(process.resourcesPath, 'build_assets')
+	: path.join(__dirname, '../../build_assets')
+
+const getAssetPath = (...paths) => {
+	return path.join(RESOURCES_PATH, ...paths)
+}
+
 const openWindow = () => {
 	mainWindow = new BrowserWindow({
+		show: false,
 		width: 1100,
 		height: 720,
+		icon: getAssetPath('icon.png'),
 		webPreferences: {
 			contextIsolation: false,
 		},
 	})
 
-	// load `index.html` file
-	mainWindow.loadFile('build/index.html')
+	mainWindow.loadURL(resolveHtmlPath('index.html'))
+
+	mainWindow.on('ready-to-show', () => {
+		if (!mainWindow) {
+			throw new Error('"mainWindow" is not defined')
+		}
+		mainWindow.show()
+	})
+	mainWindow.on('closed', () => {
+		mainWindow = null
+	})
 }
 
 // when app is ready, open a window
@@ -37,8 +58,9 @@ app.whenReady()
 			.catch((err) => console.log('An error occurred: ', err))
 		openWindow()
 		io.watchFiles(mainWindow)
+		// when app activates, open a window
 		app.on('activate', () => {
-			if (mainWindow === null) openWindow()
+			if (BrowserWindow.getAllWindows().length === 0) openWindow()
 		})
 	})
 	.catch(console.log)
@@ -47,13 +69,6 @@ app.whenReady()
 app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {
 		app.quit()
-	}
-})
-
-// when app activates, open a window
-app.on('activate', () => {
-	if (BrowserWindow.getAllWindows().length === 0) {
-		openWindow()
 	}
 })
 

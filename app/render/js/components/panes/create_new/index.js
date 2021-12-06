@@ -6,9 +6,9 @@ import { BaseChoiceStep, GeneralStep, SummaryStep } from './steps'
 import 'rc-steps/assets/index.css'
 
 const tabs = [
-	{ key: 'general', step: GeneralStep },
-	{ key: 'base_choice', step: BaseChoiceStep },
-	{ key: 'summaary', step: SummaryStep },
+	{ key: 'general', stepInner: GeneralStep },
+	{ key: 'base_choice', stepInner: BaseChoiceStep },
+	{ key: 'summary', stepInner: SummaryStep },
 ]
 
 function CreateNewPane() {
@@ -43,7 +43,7 @@ function CreateNewPane() {
 						display={index === currentStep ? 'block' : 'none'}
 					>
 						<Paragraph>Panel #{index}</Paragraph>
-						<tab.step />
+						<tab.stepInner />
 					</Pane>
 				))}
 			</Pane>

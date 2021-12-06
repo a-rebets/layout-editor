@@ -1,3 +1,5 @@
-function BaseChoiceStep() {}
+function BaseChoiceStep() {
+	return <></>
+}
 
 export default BaseChoiceStep
